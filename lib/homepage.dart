@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:netflix_slider/components/buttons_home.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -25,84 +26,16 @@ class _HomePageState extends State<HomePage> {
             ),
             Column(
               mainAxisAlignment: MainAxisAlignment.end,
-              crossAxisAlignment: CrossAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 SizedBox(
                   child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Text('Stranger Things',
-                          style: TextStyle(fontSize: 60, color: Colors.white))
+                      Image.asset('assets/images/logo.png'),
                     ],
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(60.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Icon(
-                            Icons.check,
-                            color: Colors.white,
-                          ),
-                          Text(
-                            'My List',
-                            style: TextStyle(
-                              fontSize: 16,
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ],
-                      ),
-                      SizedBox(
-                        width: 101,
-                        height: 38,
-                        child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            primary: Colors.white,
-                            onPrimary: Colors.black87,
-                          ),
-                          onPressed: () {
-                            print('começar filme');
-                          },
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Icon(Icons.play_arrow),
-                              Text(
-                                ' Play',
-                                style: TextStyle(
-                                    fontSize: 20, color: Colors.black87),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Icon(
-                            Icons.info_outline,
-                            color: Colors.white,
-                          ),
-                          Text(
-                            'Info',
-                            style: TextStyle(fontSize: 16, color: Colors.white),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
+                ButtonsHome(),
               ],
             ),
           ],
