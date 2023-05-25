@@ -47,7 +47,7 @@ class _HomePageState extends State<HomePage> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text('Teen - Terror - EUA - Ficção científica',
+                          Text('Teen • Horror • USA • Science Fiction',
                               style: TextStyle(
                                   fontSize: 18,
                                   color: Colors.white,

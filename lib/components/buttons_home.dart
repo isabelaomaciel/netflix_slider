@@ -1,5 +1,5 @@
-
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class ButtonsHome extends StatefulWidget {
   const ButtonsHome({Key? key}) : super(key: key);
@@ -9,6 +9,8 @@ class ButtonsHome extends StatefulWidget {
 }
 
 class _ButtonsHomeState extends State<ButtonsHome> {
+   bool _textButton = false;
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -21,9 +23,27 @@ class _ButtonsHomeState extends State<ButtonsHome> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Icon(
-                Icons.check,
-                color: Colors.white,
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                 backgroundColor: Colors.transparent,
+                ),
+                onPressed: () {
+                  Fluttertoast.showToast(
+                    msg: _textButton ? 'added to my list' : 'removed from my list',
+                    timeInSecForIosWeb: 1,
+                    backgroundColor: Colors.black,
+                    textColor: Colors.white,
+                    fontSize: 16.0,
+                  );
+                  setState(() {
+                    _textButton = !_textButton ;
+                  });
+
+                },
+                child: Icon(
+                  _textButton ? Icons.add : Icons.check,
+                  color: Colors.white,
+                ),
               ),
               Text(
                 'My List',
@@ -43,9 +63,7 @@ class _ButtonsHomeState extends State<ButtonsHome> {
                 primary: Colors.white,
                 onPrimary: Colors.black87,
               ),
-              onPressed: () {
-                print('começar filme');
-              },
+              onPressed: () {},
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -73,7 +91,11 @@ class _ButtonsHomeState extends State<ButtonsHome> {
               ),
               Text(
                 'Info',
-                style: TextStyle(fontSize: 16, color: Colors.white),
+                style: TextStyle(
+                  fontSize: 16,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ],
           ),
